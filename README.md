@@ -1,6 +1,6 @@
 # Bambino Style Guide() {
 
-This Javascript style guide was forked from the popular Airbnb style guide. As an eng org, we will adapt and extend it over time as we align on patterns and standards. Anyone can make a PR into this repo. Updating our style guide will review and approval from each member of the eng team.
+This Javascript style guide was forked from the popular Airbnb style guide. As an eng org, we will adapt and extend it over time as we align on patterns and standards. Anyone can make a PR into this repo. Updating our style guide will require PR review and approval from each member of the eng team.
 
 
 Packages for eslint config:
