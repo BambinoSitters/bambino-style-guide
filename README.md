@@ -2,7 +2,6 @@
 
 This Javascript style guide was forked from the popular Airbnb style guide. As an eng org, we will adapt and extend it over time as we align on patterns and standards. Anyone can make a PR into this repo. Updating our style guide will review and approval from each member of the eng team.
 
-> **Note**: this guide assumes you are using [Babel](https://babeljs.io), and requires that you use [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) or the equivalent. It also assumes you are installing shims/polyfills in your app, with [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) or the equivalent.
 
 Packages for eslint config:
 
