@@ -646,6 +646,21 @@ Packages for eslint config:
 
 ## Functions
 
+  #### Vertical Spacing 
+  
+  Keep related functions and method close to each other. If a function calls another function, keep them as close together as possible. 
+
+  #### Function Design 
+  ###### Minimize number of parameters 
+
+  - Avoid functions that take more than two parameters 
+  - *No more than 3 parameters should is a hard rule*
+    - Many parameters creates more cognitive load when using the function
+    - With many parameters, ordering is often not intuitive and requires reading code
+    - You want to make functions easier to understand and reason about without needing a lot of help from IDE and documentation 
+  - If a function has more than 2 parameters, it often makes sense to rewrite one parameter as an object or map. 
+    - This has advantages - order does not matter in a map and the property names clarify what each parameter is supposed to do 
+
   <a name="functions--declarations"></a><a name="7.1"></a>
   - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style), [`func-names`](https://eslint.org/docs/latest/rules/func-names)
 
