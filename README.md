@@ -665,8 +665,8 @@ Packages for eslint config:
 
     In general, we don't want to mix different levels of abstraction within a single function body. 
 
+    The below function mixes levels of abstraction, validating input in a very specific way (low-level) and calling a helper to save a user (higher-level) 
     ```javascript
-    /** The below function mixes levels of abstraction, validating input in a very specific way (low-level) and calling a helper to save a user (higher-level) */
 
     const submitForm = (email) => {
       if (!user?.email?.includes('@')) {
@@ -678,8 +678,8 @@ Packages for eslint config:
     }
     ```
 
+  Below is better, both helper functions are at similar level of abstraction 
     ```javascript
-    /** Below is better, both helper functions are at similar level of abstraction */
 
     const submitForm = (email) => {
       if (!isValidEmail(email)) {
