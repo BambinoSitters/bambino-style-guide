@@ -3245,6 +3245,17 @@ Packages for eslint config:
 **[⬆ back to top](#table-of-contents)**
 
 ## Naming Conventions
+  
+  #### Naming variables
+  You want these to be as specific as it need to be to make the code readable. Here are some examples 
+
+| Data | Bad Names | Decent Names | Good Names |
+|----------|----------|----------|----------| 
+| User Object | `const u`, `const data` | `const userData`, `const person` | `const user`, `const customer` | 
+|  | This is bad because it could contain anything | userData is redundant, "person" is too unspecific | user is descrptive, customer is even more specific |
+| User input validation result (true / false) | `const v`; `const val`| `const correct`; `const validatedInput`| `const isCorrect`; `const isValid` |
+| | These are bad because "v" could stand for anything and "val" could just stand for generic "value"| These terms do not imply that the variable is a boolean, they could be any data type| Descriptive and value type is clear
+
 
   <a name="naming--descriptive"></a><a name="22.1"></a>
   - [23.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](https://eslint.org/docs/rules/id-length)
