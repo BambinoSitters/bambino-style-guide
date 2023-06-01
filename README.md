@@ -663,33 +663,35 @@ Packages for eslint config:
 
   ##### Avoid mixing levels of abstraction
 
-    In general, we don't want to mix different levels of abstraction within a single function body. 
+  In general, we don't want to mix different levels of abstraction within a single function body. 
 
-    The below function mixes levels of abstraction, validating input in a very specific way (low-level) and calling a helper to save a user (higher-level) 
-    ```javascript
+  The below function mixes levels of abstraction, validating input in a very specific way (low-level) and calling a helper to save a user (higher-level) 
 
-    const submitForm = (email) => {
-      if (!user?.email?.includes('@')) {
-        setError('invalid email')
-        return;
-      } else {
-        saveUser(email)
-      }
+  ```javascript
+
+  const submitForm = (email) => {
+    if (!user?.email?.includes('@')) {
+      setError('invalid email')
+      return;
+    } else {
+      saveUser(email)
     }
-    ```
+  }
+  ```
 
   Below is better, both helper functions are at similar level of abstraction 
-    ```javascript
 
-    const submitForm = (email) => {
-      if (!isValidEmail(email)) {
-        setError('invalid email')
-        return;
-      } else {
-        saveUser(email)
-      }
+  ```javascript
+
+  const submitForm = (email) => {
+    if (!isValidEmail(email)) {
+      setError('invalid email')
+      return;
+    } else {
+      saveUser(email)
     }
-    ```
+  }
+  ```
 
   <a name="functions--declarations"></a><a name="7.1"></a>
   - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style), [`func-names`](https://eslint.org/docs/latest/rules/func-names)
