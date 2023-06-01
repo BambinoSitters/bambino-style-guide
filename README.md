@@ -3256,6 +3256,16 @@ Packages for eslint config:
 | User input validation result (true / false) | `const v`; `const val`| `const correct`; `const validatedInput`| `const isCorrect`; `const isValid` |
 | | These are bad because "v" could stand for anything and "val" could just stand for generic "value"| These terms do not imply that the variable is a boolean, they could be any data type| Descriptive and value type is clear
 
+#### Naming Functions 
+You want the type of value being returned, and the fn description, to be as clear as possible from the name. Avoid generic function names. You also do not want the name to be redundant. 
+
+| Operation | Bad Names | Decent Names | Good Names |
+|----------|----------|----------|----------| 
+| Save user data to a DB | `process(...)`, `handle(...)` | `save(...)`, `storeData(...)` | `saveUser(...)`, `storeUser(...)` | 
+|  | Both are very generic | At least we have a general idea of the fn (saving), but not what is being saved | These are solid |
+| Validate user input | `process(...)`; `save(...)`| `validateSave(...)`; `check(...)`| `validate(...)`; `isValid(...)` |
+| | These are bad because they are generic. `save` is actually misleading| Not totally specific, `validateSave` doesn't seem totally clear, are we saving or validating?| Descriptive and value type is clear
+
 
   <a name="naming--descriptive"></a><a name="22.1"></a>
   - [23.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](https://eslint.org/docs/rules/id-length)
