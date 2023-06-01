@@ -651,7 +651,7 @@ Packages for eslint config:
   Keep related functions and method close to each other. If a function calls another function, keep them as close together as possible. 
 
   #### Function Design 
-  ###### Minimize number of parameters 
+  ##### Minimize number of parameters 
 
   - Avoid functions that take more than two parameters 
   - *No more than 3 parameters should is a hard rule*
@@ -660,6 +660,36 @@ Packages for eslint config:
     - You want to make functions easier to understand and reason about without needing a lot of help from IDE and documentation 
   - If a function has more than 2 parameters, it often makes sense to rewrite one parameter as an object or map. 
     - This has advantages - order does not matter in a map and the property names clarify what each parameter is supposed to do 
+
+  ##### Avoid mixing levels of abstraction
+
+    In general, we don't want to mix different levels of abstraction within a single function body. 
+
+    ```javascript
+    /** The below function mixes levels of abstraction, validating input in a very specific way (low-level) and calling a helper to save a user (higher-level) */
+
+    const submitForm = (email) => {
+      if (!user?.email?.includes('@')) {
+        setError('invalid email')
+        return;
+      } else {
+        saveUser(email)
+      }
+    }
+    ```
+
+    ```javascript
+    /** Below is better, both helper functions are at similar level of abstraction */
+
+    const submitForm = (email) => {
+      if (!isValidEmail(email)) {
+        setError('invalid email')
+        return;
+      } else {
+        saveUser(email)
+      }
+    }
+    ```
 
   <a name="functions--declarations"></a><a name="7.1"></a>
   - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style), [`func-names`](https://eslint.org/docs/latest/rules/func-names)
